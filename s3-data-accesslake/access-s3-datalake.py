@@ -14,8 +14,8 @@ def get_remote_s3_files(remote_file_location, dest_location):
     
     '''
 
-    remote_file='adl-ai-summit-2021-prehackathon.zip'
-    dest_file='/home/ec2-user/SageMaker/output.zip'
+    remote_file=remote_file_location
+    dest_file=dest_location
 
     s3=boto3.resource('s3')
     s3.Bucket(s3_bucket).download_file(remote_file, dest_file)
